@@ -6,39 +6,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile of saulo </title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Righteous&family=Roboto:wght@100&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9aa2246af2.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100&display=swap" rel="stylesheet">
 </head>
 <header>
     <body>
-        <nav class="menu">
-            <ul>
-                <li><a href="">Sobre</a></li>
-                <li><a href="">Portfólio</a></li>
-                <li><a href="">Contato</a></li>
-            </ul>
-        </nav>    
-        <div class="texto">
+        <div class="profile">
+            <div>
+            <img class="perfil" src="img/WhatsApp Image 2022-09-29 at 10.13.17.jpeg" alt="">
+        </div>
+    <div class="texto">
+            <div class="container">
+                <p><span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
+              </div>
             <h1 class="site-tilte">Saulo Iantas</h1>
-            <h2 class="site-subtitle">Estudante frontend</h2>
-        </div> 
+            <section class="contato">
+                <div class="grid_icons">
+                    <a target="_black" href="https://github.com/sauloiantas">
+                        <i class="fa-brands fa-github"></i>
+                    </a> 
+                    <a target="_blank" href="https://www.instagram.com/saulo_iantas/">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a target="_blank" href="https://mail.google.com/mail/u/0/#search/saulo.iantas26%40gmail.com">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    </div>
+                </div>
+        </div>
+    </div>
 </header>
-    <section>
-        <h2>Portfólio</h2>
-        <figure>
-			<img class="img-portfolio" src="./img/ecommerce-creditos-s-o-c-i-a-l-c-u-t-unsplash.jpg" alt="eCommerce">
-			<figcaption>eCommerce</figcaption>
-		</figure>
-		<figure>
-			<img class="img-portfolio" src="./img/mobile-creditos-nate-grant-unsplash.jpg" alt=">Mobile">
-			<figcaption>Mobile</figcaption>
-		</figure>
-		<figure>
-			<img class="img-portfolio" src="./img/webdesign-creditos-domenico-loia-unsplash.jpg" alt="Web design">
-			<figcaption>Web design</figcaption>
-		</figure>
-		<figure>
-			<img class="img-portfolio" src="./img/projpessoais-creditos-hal-gatewood-unsplash.jpg" alt="Projetos pessoais">
-			<figcaption>Projetos pessoais</figcaption>
-		</figure> 
+    </section>
+    <div class="sobre">
+        <h3>Sobre mim</h2>
+        <p>Estudante de programação, futuro frontend devolper, eu nasci em 2007, localizado em Juiz de Fora - MG </p>
+        </div>
+        <div class="hobbys">
+            <h3>Hobby</h3>
+            <i class="fa-solid fa-gamepad"></i>
+            <i class="fa-solid fa-tv"></i>
+            <i class="fa-solid fa-pizza-slice"></i>
+            <i class="fa-solid fa-basketball"></i>
+        </div>
+        <script>const typedTextSpan = document.querySelector(".typed-text");
+            const cursorSpan = document.querySelector(".cursor");
+            
+            const textArray = ["Olá! me chamo", "Hello! my name is", "Salut! mon nom est", "¡Hola! mi nombre"];
+            const typingDelay = 200;
+            const erasingDelay = 100;
+            const newTextDelay = 2000; // Delay between current and next text
+            let textArrayIndex = 0;
+            let charIndex = 0;
+            
+            function type() {
+              if (charIndex < textArray[textArrayIndex].length) {
+                if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+                typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, typingDelay);
+              } 
+              else {
+                cursorSpan.classList.remove("typing");
+                setTimeout(erase, newTextDelay);
+              }
+            }
+            
+            function erase() {
+              if (charIndex > 0) {
+                if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+                typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
+                charIndex--;
+                setTimeout(erase, erasingDelay);
+              } 
+              else {
+                cursorSpan.classList.remove("typing");
+                textArrayIndex++;
+                if(textArrayIndex>=textArray.length) textArrayIndex=0;
+                setTimeout(type, typingDelay + 1100);
+              }
+            }
+            
+            document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
+              if(textArray.length) setTimeout(type, newTextDelay + 250);
+            });</script>
+        <!--
+    <section class="portifolio">
+        <h3>Projetos</h3>
+            <div class="grid">   
+                <figure>
+                    <img class="img-portfolio" src="./img/ecommerce-creditos-s-o-c-i-a-l-c-u-t-unsplash.jpg" alt="eCommerce">
+                    <figcaption>eCommerce</figcaption>
+                </figure>
+                <figure>
+                    <img class="img-portfolio" src="./img/mobile-creditos-nate-grant-unsplash.jpg" alt=">Mobile">
+                    <figcaption>Mobile</figcaption>
+                </figure>
+                <figure>
+                    <img class="img-portfolio" src="./img/webdesign-creditos-domenico-loia-unsplash.jpg" alt="Web design">
+                    <figcaption>Web design</figcaption>
+                </figure>
+                <figure>
+                    <img class="img-portfolio" src="./img/projpessoais-creditos-hal-gatewood-unsplash.jpg" alt="Projetos pessoais">
+                    <figcaption>Projetos pessoais</figcaption>
+                </figure> 
+
+                <h1 class="doido"> Hello meu nome e saulo</h1>
+        </div>
+        ->
     </section>
 </body>
 </html>
